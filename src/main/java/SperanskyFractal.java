@@ -34,10 +34,4 @@ private void drawSerpinsky(int n,  int[] x,  int[] y,Graphics2D g2d) {
 
             }
 
-//
-//        Platform.runLater(() -> {
-//        drawSerpinsky(n-1, new double[]{x[0], x1, x3}, new double[]{y[0], y1, y3});
-//        drawSerpinsky(n-1, new double[]{x1, x[1], x2}, new double[]{y1, y[1], y2});
-//        drawSerpinsky(n-1, new double[]{x3, x2, x[2]}, new double[]{y3, y2, y[2]});
-  //      });
         }

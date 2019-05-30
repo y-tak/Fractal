@@ -1,5 +1,8 @@
+import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.text.AbstractDocument;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -64,13 +67,26 @@ public final class FractalDemo {
 
     private static void drawSperansky()
     {
-        JFrame window = new JFrame("SperanskyFract");
+       JFrame window = new JFrame("SperanskyFract");
         window.setSize(650, 650);
-        window.setContentPane(new SperanskyFractal());
+//        window.setContentPane(new SperanskyFractal());
         window.setBackground(Color.WHITE);
         window.setResizable(false);
         window.setDefaultCloseOperation(3);
         window.setVisible(true);
+        SperanskyFractal sp=new SperanskyFractal();
+        window.add(sp);
+        BufferedImage image =(BufferedImage)
+              sp.createImage(650, 650);
+        Graphics g2 = image.createGraphics();
+        sp.paintComponent(g2);
+        g2.dispose();
+        try {
+            ImageIO.write(image, "bmp", new File("src/speransky.bmp"));
+        }
+        catch(IOException io) { io.printStackTrace(); }
+
+
 
     }
 
