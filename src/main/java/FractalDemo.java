@@ -24,7 +24,7 @@ public final class FractalDemo {
         drawCircFract();
         drawTFract();
         drawSperansky();
-        drawChaos();
+       // drawChaos();
         ////------------для ввода вручную-----------------------
 //        Scanner in=new Scanner(System.in);
 //        System.out.println("Введите два числа от [-1,5;1,5] для констант множества Жули a ");
@@ -80,7 +80,6 @@ public final class FractalDemo {
         Toolkit kit = Toolkit.getDefaultToolkit();
 
         JFrame window = new JFrame("TFract");
-       // window.setSize(600, 600);
         window.setSize(kit.getScreenSize());
         window.setContentPane(new TFract());
         window.setBackground(Color.WHITE);
