@@ -21,46 +21,6 @@ public class ChaosFract extends JPanel {
         this.e = e;
     }
 
-//
-//    public void paintComponent(Graphics g){
-//        Graphics2D g2d = (Graphics2D) g;
-//        g.setColor(Color.BLACK);
-//        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);   //сглаживание
-//        Point z=new Point(300,300);
-//        Point z1=new Point(300,300);
-//        DrLine(z, z1, g,1000);           //центр и размер фрактала
-//    }
-//
-//    public void DrLine(Point z, Point z1,Graphics g,int iter) {
-//
-//        //всего получится (N+1) окружность
-//        //новые окружности будут иметь радиус size/c
-//        if (iter > 0) {
-//
-//
-//           int x2 = (int) a*10*z.x+(int)b*10*z.y+(int)c*10;
-//           int y2 = (int)d*10*z.x+(int)e*10*z.y+(int)f*10;
-//            z1.x = x2;
-//            z1.y = y2;
-//
-//        //    xx[iter]=x2;
-//         //   yy[iter]=y2;
-//
-//            DrLine(z,z1, g,iter-1);           //центральная окружность
-//
-//
-//
-//        }
-//        //xx[5000]=300;
-//      //  yy[5000]=300;
-//        g.setColor(Color.BLUE);
-//        g.fillRect(z1.x,z1.y,2,2);
-//      //  g.drawLine((int)z.x, (int)z.y, z1.x, z1.y);
-//
-//    }
-
-
-
     public static int drawTSQ(Graphics g, Point A, int size, int iter) {
         //параметры А - координата левого верхнего угла квадрата
         //size - длина стороны

@@ -26,8 +26,8 @@ public final class FractalDemo {
 
         drawCircFract();
         drawTFract();
-        drawSperansky();
-        drawChaos();
+       drawSperansky();
+     //  drawChaos();
         ////------------для ввода вручную-----------------------
 //        Scanner in=new Scanner(System.in);
 //        System.out.println("Введите два числа от [-1,5;1,5] для констант множества Жули a ");
@@ -45,11 +45,24 @@ public final class FractalDemo {
     {
         JFrame window = new JFrame("CircFract");
         window.setSize(600, 600);
-        window.setContentPane(new CircFractal());
+       /// window.setContentPane(new CircFractal());
         window.setBackground(Color.WHITE);
         window.setResizable(false);
         window.setDefaultCloseOperation(3);
         window.setVisible(true);
+
+        CircFractal sp=new CircFractal();
+        window.add(sp);
+
+        BufferedImage image =(BufferedImage)
+                sp.createImage(600, 600);
+        Graphics g2 = image.createGraphics();
+        sp.paintComponent(g2);
+        g2.dispose();
+        try {
+            ImageIO.write(image, "bmp", new File("src/CircFract.bmp"));
+        }
+        catch(IOException io) { io.printStackTrace(); }
 
     }
     private static void drawChaos()
@@ -57,11 +70,23 @@ public final class FractalDemo {
         JFrame window = new JFrame("ChaosFract");
         window.setSize(600, 600);
        //window.setContentPane(new ChaosFract(0.014,0.01,0.000,0.5100,-0.0800,-1.31));
-        window.setContentPane(new ChaosFract(0.7878,-0.4242,0.2424,0.8598,1.7586,1.408));
+      //  window.setContentPane(new ChaosFract(0.7878,-0.4242,0.2424,0.8598,1.7586,1.408));
         window.setBackground(Color.WHITE);
         window.setResizable(false);
         window.setDefaultCloseOperation(3);
         window.setVisible(true);
+
+        ChaosFract sp=new ChaosFract(0.7878,-0.4242,0.2424,0.8598,1.7586,1.408);
+        window.add(sp);
+        BufferedImage image =(BufferedImage)
+                sp.createImage(600, 600);
+        Graphics g2 = image.createGraphics();
+        sp.paintComponent(g2);
+        g2.dispose();
+        try {
+            ImageIO.write(image, "bmp", new File("src/chaos.bmp"));
+        }
+        catch(IOException io) { io.printStackTrace(); }
 
     }
 
@@ -70,10 +95,11 @@ public final class FractalDemo {
        JFrame window = new JFrame("SperanskyFract");
         window.setSize(650, 650);
 //        window.setContentPane(new SperanskyFractal());
+        window.setVisible(true);
         window.setBackground(Color.WHITE);
         window.setResizable(false);
         window.setDefaultCloseOperation(3);
-        window.setVisible(true);
+
         SperanskyFractal sp=new SperanskyFractal();
         window.add(sp);
         BufferedImage image =(BufferedImage)
@@ -98,11 +124,26 @@ public final class FractalDemo {
         JFrame window = new JFrame("TFract");
        // window.setSize(600, 600);
         window.setSize(kit.getScreenSize());
-        window.setContentPane(new TFract());
+       // window.setContentPane(new TFract());
         window.setBackground(Color.WHITE);
         window.setResizable(false);
         window.setDefaultCloseOperation(3);
         window.setVisible(true);
+        TFract sp=new TFract();
+        window.add(sp);
+
+        BufferedImage image =(BufferedImage)
+                sp.createImage(2000,1000);
+        Graphics g2 = image.createGraphics();
+        sp.paintComponent(g2);
+        g2.dispose();
+        try {
+            ImageIO.write(image, "bmp", new File("src/TFract.bmp"));
+        }
+        catch(IOException io) { io.printStackTrace(); }
+
+
+
 
     }
 
